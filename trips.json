@@ -1,5 +1,15 @@
 [
   {
+    "id": "lissabon-portugal-2026-09-02",
+    "destination": "Lissabon, Portugal",
+    "propertyName": "Urban Serviced Apartments",
+    "checkin": "2026-09-02",
+    "checkout": "2026-09-04",
+    "priceSEK": 1428,
+    "imageUrl": null,
+    "addedAt": "2026-08-07T09:35:53.352Z"
+  },
+  {
     "id": "turkiet-2026-09-26",
     "destination": "Turkiet",
     "propertyName": "Principe di Piemonte",
