@@ -128,6 +128,9 @@
     transition:transform .25s ease, box-shadow .25s ease;
     display:flex;
     flex-direction:column;
+    text-decoration:none;
+    color:inherit;
+    cursor:pointer;
   }
   .card:hover{
     transform:translateY(-6px);
@@ -293,9 +296,14 @@
       : `<div class="placeholder">🌅</div>`;
 
     const dateLine = fmtDateRange(trip.checkin, trip.checkout);
+    const hasLink = Boolean(trip.bookingUrl);
+    const wrapOpen = hasLink
+      ? `<a class="card" href="${escapeHTML(trip.bookingUrl)}" target="_blank" rel="noopener noreferrer">`
+      : `<div class="card">`;
+    const wrapClose = hasLink ? `</a>` : `</div>`;
 
     return `
-      <div class="card">
+      ${wrapOpen}
         <div class="card-media">
           ${mediaInner}
           <div class="price-pill">${fmtSEK(trip.priceSEK)}<span class="per">/pers</span></div>
@@ -305,7 +313,7 @@
           ${dateLine ? `<div class="card-meta"><span class="dot">●</span> ${dateLine}</div>` : ''}
           ${trip.propertyName ? `<div class="card-property">${escapeHTML(trip.propertyName)}</div>` : ''}
         </div>
-      </div>
+      ${wrapClose}
     `;
   }
 
