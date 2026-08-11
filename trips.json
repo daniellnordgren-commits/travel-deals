@@ -12,16 +12,6 @@
     "addedAt": "2026-08-11T21:21:21.624Z"
   },
   {
-    "id": "turkiet-2026-09-26",
-    "destination": "Turkiet",
-    "propertyName": "Principe di Piemonte",
-    "checkin": "2026-09-26",
-    "checkout": "2026-09-29",
-    "priceSEK": 2819,
-    "imageUrl": "https://images.unsplash.com/photo-1516108317508-6788f6a160e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE0NjY3fDB8MXxzZWFyY2h8NHx8SXRhbGllbnxlbnwwfDF8fHwxNzg2MDQ1ODAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "addedAt": "2026-08-07T09:18:51.713Z"
-  },
-  {
     "id": "italien-2026-09-26",
     "destination": "Italien",
     "propertyName": "Principe di Piemonte",
