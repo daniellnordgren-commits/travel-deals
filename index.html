@@ -241,6 +241,166 @@
     color:var(--ink-soft);
     opacity:0.7;
   }
+
+  /* ---------- RESEDETALJER (MODAL) ---------- */
+  body.modal-open .hero,
+  body.modal-open .content,
+  body.modal-open footer{
+    display:none;
+  }
+
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(233,251,255,0.5) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(15,90,120,0.55) 0%, rgba(11,59,87,0.72) 100%);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    overflow-y:auto;
+  }
+  .modal-overlay[hidden]{ display:none; }
+
+  .modal-panel{
+    position:relative;
+    width:100%;
+    max-width:520px;
+    max-height:calc(100vh - 48px);
+    overflow-y:auto;
+    background:var(--glass-strong);
+    border:1px solid rgba(255,255,255,0.9);
+    border-radius:28px;
+    box-shadow:0 30px 70px -20px rgba(5,40,60,0.55);
+    backdrop-filter:blur(14px);
+    animation:modalPop .25s ease;
+  }
+  @keyframes modalPop{
+    from{ opacity:0; transform:translateY(14px) scale(0.98); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  .modal-close{
+    position:absolute;
+    top:14px;
+    right:14px;
+    z-index:2;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.7);
+    background:rgba(11,59,87,0.55);
+    color:#fff;
+    font-size:17px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(4px);
+  }
+  .modal-close:hover{ background:rgba(11,59,87,0.8); }
+
+  .modal-media{
+    position:relative;
+    aspect-ratio:4/3;
+    background:linear-gradient(160deg, var(--sky-mid), var(--aqua));
+    border-radius:28px 28px 0 0;
+    overflow:hidden;
+  }
+  .modal-media img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .modal-media .placeholder{
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:60px;
+  }
+
+  .modal-body{
+    padding:22px 26px 30px;
+  }
+  .modal-title{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:26px;
+    margin:0 0 6px;
+    color:var(--ink);
+  }
+  .modal-property{
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .modal-meta{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .modal-meta .dot{ color:var(--aqua); }
+
+  .modal-price{
+    display:inline-flex;
+    align-items:baseline;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:#5A3600;
+    background:linear-gradient(180deg, #FFE28A 0%, var(--sun) 55%, var(--sun-deep) 100%);
+    padding:9px 18px;
+    border-radius:999px;
+    box-shadow:0 8px 18px -6px rgba(255,165,60,0.6), inset 0 1px 0 rgba(255,255,255,0.8);
+    border:1px solid rgba(255,255,255,0.6);
+    margin-bottom:20px;
+  }
+  .modal-price .per{
+    font-family:'Nunito Sans',sans-serif;
+    font-weight:700;
+    font-size:11.5px;
+    opacity:0.75;
+    margin-left:4px;
+  }
+
+  .modal-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .modal-link{
+    flex:1 1 160px;
+    text-align:center;
+    text-decoration:none;
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    padding:13px 16px;
+    border-radius:16px;
+    color:#fff;
+    box-shadow:0 10px 22px -8px rgba(15,90,120,0.45);
+    transition:transform .15s ease, filter .15s ease;
+  }
+  .modal-link:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+  .modal-link.flight{ background:linear-gradient(160deg, var(--sky-mid), var(--sky-deep)); }
+  .modal-link.hotel{ background:linear-gradient(160deg, var(--coral), #E85B3E); }
+  .modal-link:not(.flight):not(.hotel){ background:linear-gradient(160deg, var(--aqua), var(--sky-deep)); }
+
+  .modal-no-link{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:600;
+    opacity:0.8;
+  }
 </style>
 </head>
 <body>
@@ -267,6 +427,20 @@
 </div>
 
 <footer>// resedeals · uppdateras automatiskt via Carousel Studio</footer>
+
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Stäng">✕</button>
+    <div class="modal-media" id="modalMedia"></div>
+    <div class="modal-body">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-property" id="modalProperty"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-links" id="modalLinks"></div>
+    </div>
+  </div>
+</div>
 
 <script>
   const grid = document.getElementById('grid');
@@ -296,14 +470,9 @@
       : `<div class="placeholder">🌅</div>`;
 
     const dateLine = fmtDateRange(trip.checkin, trip.checkout);
-    const hasLink = Boolean(trip.bookingUrl);
-    const wrapOpen = hasLink
-      ? `<a class="card" href="${escapeHTML(trip.bookingUrl)}" target="_blank" rel="noopener noreferrer">`
-      : `<div class="card">`;
-    const wrapClose = hasLink ? `</a>` : `</div>`;
 
     return `
-      ${wrapOpen}
+      <div class="card" data-id="${escapeHTML(trip.id || '')}" tabindex="0" role="button" aria-label="Visa resa: ${escapeHTML(trip.destination || 'okänd destination')}">
         <div class="card-media">
           ${mediaInner}
           <div class="price-pill">${fmtSEK(trip.priceSEK)}<span class="per">/pers</span></div>
@@ -313,7 +482,7 @@
           ${dateLine ? `<div class="card-meta"><span class="dot">●</span> ${dateLine}</div>` : ''}
           ${trip.propertyName ? `<div class="card-property">${escapeHTML(trip.propertyName)}</div>` : ''}
         </div>
-      ${wrapClose}
+      </div>
     `;
   }
 
@@ -322,6 +491,8 @@
     div.textContent = str;
     return div.innerHTML;
   }
+
+  let currentTrips = [];
 
   async function loadTrips(){
     try {
@@ -334,8 +505,8 @@
         return;
       }
 
-      const sorted = [...trips].sort((a, b) => new Date(b.addedAt || 0) - new Date(a.addedAt || 0));
-      grid.innerHTML = sorted.map(cardHTML).join('');
+      currentTrips = [...trips].sort((a, b) => new Date(b.addedAt || 0) - new Date(a.addedAt || 0));
+      grid.innerHTML = currentTrips.map(cardHTML).join('');
     } catch (e) {
       console.error(e);
       emptyState.style.display = 'block';
@@ -343,6 +514,74 @@
       emptyState.querySelector('p').textContent = 'Något gick fel när trips.json skulle hämtas. Kontrollera att filen finns i repot.';
     }
   }
+
+  /* ---------- RESEDETALJER (MODAL) ---------- */
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalClose = document.getElementById('modalClose');
+  const modalMedia = document.getElementById('modalMedia');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalProperty = document.getElementById('modalProperty');
+  const modalMeta = document.getElementById('modalMeta');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalLinks = document.getElementById('modalLinks');
+
+  function openModal(trip){
+    modalMedia.innerHTML = trip.imageUrl
+      ? `<img src="${trip.imageUrl}" alt="${escapeHTML(trip.destination || '')}">`
+      : `<div class="placeholder">🌅</div>`;
+
+    modalTitle.textContent = trip.destination || 'Okänd destination';
+    modalProperty.textContent = trip.propertyName || '';
+    modalProperty.style.display = trip.propertyName ? 'block' : 'none';
+
+    const dateLine = fmtDateRange(trip.checkin, trip.checkout);
+    modalMeta.innerHTML = dateLine ? `<span class="dot">●</span> ${dateLine}` : '';
+    modalMeta.style.display = dateLine ? 'flex' : 'none';
+
+    modalPrice.innerHTML = `${fmtSEK(trip.priceSEK)}<span class="per">/pers</span>`;
+
+    let linksHTML = '';
+    if (trip.flightUrl) linksHTML += `<a class="modal-link flight" href="${escapeHTML(trip.flightUrl)}" target="_blank" rel="noopener noreferrer">✈️ Boka flyg</a>`;
+    if (trip.hotelUrl) linksHTML += `<a class="modal-link hotel" href="${escapeHTML(trip.hotelUrl)}" target="_blank" rel="noopener noreferrer">🏨 Boka boende</a>`;
+    if (!trip.flightUrl && !trip.hotelUrl && trip.bookingUrl) {
+      linksHTML += `<a class="modal-link" href="${escapeHTML(trip.bookingUrl)}" target="_blank" rel="noopener noreferrer">🔗 Boka resa</a>`;
+    }
+    modalLinks.innerHTML = linksHTML || `<div class="modal-no-link">Ingen bokningslänk sparad än.</div>`;
+
+    document.body.classList.add('modal-open');
+    modalOverlay.hidden = false;
+    modalOverlay.scrollTop = 0;
+    modalClose.focus();
+  }
+
+  function closeModal(){
+    document.body.classList.remove('modal-open');
+    modalOverlay.hidden = true;
+  }
+
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    if (!card) return;
+    const trip = currentTrips.find(t => t.id === card.dataset.id);
+    if (trip) openModal(trip);
+  });
+
+  grid.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.card');
+    if (!card) return;
+    e.preventDefault();
+    const trip = currentTrips.find(t => t.id === card.dataset.id);
+    if (trip) openModal(trip);
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modalOverlay.hidden) closeModal();
+  });
 
   loadTrips();
 </script>
