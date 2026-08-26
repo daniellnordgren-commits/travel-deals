@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "trapani-2026-09-03",
+    "destination": "Trapani",
+    "propertyName": "Hus med sovplatser för 4 personer",
+    "checkin": "2026-09-03",
+    "checkout": "2026-09-10",
+    "priceSEK": 2281,
+    "imageUrl": "https://images.unsplash.com/photo-1605961921750-d209fc8e8eb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE0NjY3fDB8MXxzZWFyY2h8OHx8VHJhcGFuaXxlbnwwfDF8fHwxNzg3NzQ4NDU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "flightUrl": "https://www.skyscanner.se/transport/flyg/stoc/trap/260903/260910/config/9547-2609030545--31915-0-17088-2609030935%7C17088-2609101000--31915-0-9547-2609101340?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=true&rtn=1&priceSourceId=&priceTrace=%7Bbl%7D%3A202608261116*D*ARN*TPS*20260903*skyp*FR%7C202608261116*D*TPS*ARN*20260910*skyp*FR&qp_prevCurrency=SEK&qp_prevPrice=686&qp_prevProvider=ins_month",
+    "hotelUrl": "https://www.vrbo.com/sv-se/semesterhus/p11918123?chkin=2026-09-03&chkout=2026-09-10&d1=2026-09-03&d2=2026-09-10&startDate=2026-09-03&endDate=2026-09-10&x_pwa=1&rfrr=HSR&pwa_ts=1787748440940&referrerUrl=aHR0cHM6Ly93d3cudnJiby5jb20vSG90ZWwtU2VhcmNo&useRewards=false&adults=4&regionId=6123139&destination=Paceco%2C%20Sicilien%2C%20Italien&destType=BOUNDING_BOX&latLong=37.979908%2C12.559222&total_price=-3%2C6059&searchId=b8835b4f-4ee3-4766-9fed-b675794283a9&sort=RECOMMENDED&top_dp=6309&top_cur=SEK&userIntent=&selectedRoomType=119307153&selectedRatePlan=00016c8361402fb6488184539d1a97b91a6a&expediaPropertyId=119307153&containsVideo=false",
+    "addedAt": "2026-08-26T12:55:12.847Z"
+  }
+]
