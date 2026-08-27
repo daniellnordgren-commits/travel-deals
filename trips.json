@@ -1,5 +1,17 @@
 [
   {
+    "id": "marrakech-2026-09-10",
+    "destination": "Marrakech",
+    "propertyName": "Marrakech Inn - Mysig lägenhet",
+    "checkin": "2026-09-10",
+    "checkout": "2026-09-17",
+    "priceSEK": 2359,
+    "imageUrl": "https://images.unsplash.com/photo-1561642769-1bca263542e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE0NjY3fDB8MXxzZWFyY2h8M3x8TWFycmFrZWNofGVufDB8MXx8fDE3ODc4MzM2ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "flightUrl": "https://www.skyscanner.se/transport/flyg/stoc/marr/260910/260917/config/9547-2609101240--31915-0-15753-2609101655%7C15753-2609170740--31915-1-9547-2609171930?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&rtn=1&priceSourceId=&priceTrace=%7Bbl%7D%3A202608271202*I*ARN*RAK*20260910*skyp*FR%7C202608271202*I*RAK*ARN*20260917*skyp*FR&qp_prevCurrency=SEK&qp_prevPrice=770&qp_prevProvider=ins_month",
+    "hotelUrl": "https://www.vrbo.com/sv-se/pdp/lo/126948860?chkin=2026-09-10&chkout=2026-09-17&d1=2026-09-10&d2=2026-09-17&startDate=2026-09-10&endDate=2026-09-17&x_pwa=1&rfrr=HSR&pwa_ts=1787833437330&referrerUrl=aHR0cHM6Ly93d3cudnJiby5jb20vSG90ZWwtU2VhcmNo&useRewards=false&adults=2&regionId=2938&destination=Marrakech%2C%20Marrakech%2C%20Marrakech-Safi%2C%20Marocko&destType=MARKET&latLong=31.6297%2C-7.987581&searchId=08f98cc3-6a97-460d-bd22-f19a674590cc&sort=RECOMMENDED&top_dp=3154&top_cur=SEK&userIntent=&selectedRoomType=328261022&selectedRatePlan=408303687&expediaPropertyId=126948860&containsVideo=false",
+    "addedAt": "2026-08-27T12:33:54.840Z"
+  },
+  {
     "id": "trapani-2026-09-03",
     "destination": "Trapani",
     "propertyName": "Hus med sovplatser för 4 personer",
