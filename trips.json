@@ -1,5 +1,17 @@
 [
   {
+    "id": "thailand-2026-11-19",
+    "destination": "Thailand",
+    "propertyName": "Bella Villa Serviced Apartment",
+    "checkin": "2026-11-19",
+    "checkout": "2026-11-27",
+    "priceSEK": 6638,
+    "imageUrl": "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE0NjY3fDB8MXxzZWFyY2h8M3x8VGhhaWxhbmR8ZW58MHwxfHx8MTc4NzgzNDU5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+    "flightUrl": "https://www.solfaktor.se/booking/32278/1a25a496-9ed0-4738-b0cc-7f1d9851349b?meta=solfaktor-search",
+    "hotelUrl": null,
+    "addedAt": "2026-08-27T12:46:51.345Z"
+  },
+  {
     "id": "marrakech-2026-09-10",
     "destination": "Marrakech",
     "propertyName": "Marrakech Inn - Mysig lägenhet",
