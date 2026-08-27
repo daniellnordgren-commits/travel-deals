@@ -1,5 +1,17 @@
 [
   {
+    "id": "sharm-el-sheikh-egypt-2027-01-18",
+    "destination": "Sharm el-Sheikh, Egypt",
+    "propertyName": "Falcon Naama Star Hotel",
+    "checkin": "2027-01-18",
+    "checkout": "2027-01-25",
+    "priceSEK": 4152,
+    "imageUrl": "https://images.unsplash.com/photo-1625232279628-0195f7f0fae5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE0NjY3fDB8MXxzZWFyY2h8M3x8U2hhcm0lMjBlbC1TaGVpa2glMkMlMjBFZ3lwdHxlbnwwfDF8fHwxNzg3ODM2ODAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "flightUrl": "https://www.solfaktor.se/booking/32535/1f9d97a0-7158-4377-abc0-946158fe2588?meta=solfaktor-search",
+    "hotelUrl": null,
+    "addedAt": "2026-08-27T13:22:31.844Z"
+  },
+  {
     "id": "thailand-2026-11-19",
     "destination": "Thailand",
     "propertyName": "Bella Villa Serviced Apartment",
